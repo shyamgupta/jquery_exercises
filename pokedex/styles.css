@@ -23,13 +23,14 @@ body{
 
 #pokedex{
     width: 20%;
-    height: 50%;
+    height: 80%;
     float: left;
     margin: 2%;
     background-color: brown;
     color: white;
     text-align: left;
     padding: 1%;
+    text-align: left;
 }
 
 #pokedex h2{
