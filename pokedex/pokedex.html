@@ -13,9 +13,10 @@
                 $('#pokemon').append('<img src="'+url+'">');
             }
             $('img').click(function(){
-                console.log($(this).attr('src'));
-                $.get($(this).attr('src'),function(res){
-                    console.log(res);
+                url = 'https://pokeapi.co/api/v2/pokemon/'+$(this).attr('src').split('/').pop().slice('.').split('.')[0]
+                $.get(url,function(res){
+                    $('#pokedex').html('<h2>Name: '+res.name+'</h2>'+'<p>Height: '+res.height+'</p>'+'<p>Weight: '+res.weight+'</p>');
+                    console.log('Types: ',res.types);
                 },'json');
             })
         })

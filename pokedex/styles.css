@@ -32,3 +32,7 @@ body{
     padding: 1%;
 }
 
+#pokedex h2{
+    text-transform: capitalize;
+}
+
