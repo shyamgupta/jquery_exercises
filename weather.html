@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+
+            $('form').submit(function(){
+
+                city_url = 'http://api.openweathermap.org/data/2.5/weather?q=' + $('#city').val() + '&APPID=4ae0213922d2abf73fc12332b255f898';
+                console.log(city_url);
+                $.get(city_url,function(res){
+                    celcius = Math.floor((9/5)*(res.main.temp - 273) + 32);
+                    $('body').append('<h2>Temperature(F):'+celcius+'</h2>');
+                },'json')
+                return false;
+            })
+
+
+        })
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="city">
+        <label for="city">City Name</label><br>
+        <input type="submit" value="Get Weather">
+    </form>
+</body>
+</html>
